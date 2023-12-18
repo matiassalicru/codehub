@@ -1,4 +1,6 @@
+import { CssBaseline } from '@mui/material'
 import { Header } from '../components/Header'
+import { Providers } from 'ui/providers'
 
 export const metadata = {
   title: 'Next.js',
@@ -12,8 +14,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang='en'>
-      <Header />
-      <body>{children}</body>
+      <body>
+        <Providers>
+          <CssBaseline />
+          <Header />
+          {children}
+        </Providers>
+      </body>
     </html>
   )
 }
